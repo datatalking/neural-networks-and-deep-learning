@@ -18,7 +18,15 @@ new features. However, bug reports are welcome, and you should feel
 free to fork and modify the code.
 
 ## Updating to Python3.8 with GPU
-
+1. updating print functions
+2. updating theanu
+3. add gpu access
+4. add db access
+5. add .env
+6. add .gitignore
+7. add docker features
+8. add coverage tests
+9. add unittests
 
 
 ## License
