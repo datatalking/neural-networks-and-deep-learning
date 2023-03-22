@@ -182,7 +182,7 @@ def double_fc_dropout(p0, p1, p2, repetitions):
         "../data/mnist_expanded.pkl.gz")
     nets = []
     for j in range(repetitions):
-        print "\n\nTraining using a dropout network with parameters ",p0,p1,p2
+        print("\n\nTraining using a dropout network with parameters ",p0,p1,p2)
         print "Training with expanded data, run num %s" % j
         net = Network([
             ConvPoolLayer(image_shape=(mini_batch_size, 1, 28, 28),
