@@ -17,6 +17,7 @@ As the code is written to accompany the book, I don't intend to add
 new features. However, bug reports are welcome, and you should feel
 free to fork and modify the code.
 
+
 ## Updating to Python3.8 with GPU
 1. updating print functions
 2. updating theanu
