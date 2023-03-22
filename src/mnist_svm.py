@@ -13,7 +13,6 @@ import mnist_loader
 from sklearn import svm
 
 
-
 def svm_baseline():
     training_data, validation_data, test_data = mnist_loader.load_data()
     # train
@@ -28,4 +27,3 @@ def svm_baseline():
 
 if __name__ == "__main__":
     svm_baseline()
-
