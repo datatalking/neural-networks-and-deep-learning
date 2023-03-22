@@ -42,7 +42,7 @@ def shallow(n=3, epochs=60):
 
 def basic_conv(n=3, epochs=60):
     for j in range(n):
-        print "Conv + FC architecture"
+        print("Conv + FC architecture")
         net = Network([
             ConvPoolLayer(image_shape=(mini_batch_size, 1, 28, 28),
                           filter_shape=(20, 1, 5, 5),
@@ -56,7 +56,7 @@ def basic_conv(n=3, epochs=60):
 
 def omit_FC():
     for j in range(3):
-        print "Conv only, no FC"
+        print("Conv only, no FC")
         net = Network([
             ConvPoolLayer(image_shape=(mini_batch_size, 1, 28, 28),
                           filter_shape=(20, 1, 5, 5),
@@ -68,7 +68,7 @@ def omit_FC():
 
 def dbl_conv(activation_fn=sigmoid):
     for j in range(3):
-        print "Conv + Conv + FC architecture"
+        print("Conv + Conv + FC architecture")
         net = Network([
             ConvPoolLayer(image_shape=(mini_batch_size, 1, 28, 28),
                           filter_shape=(20, 1, 5, 5),
@@ -93,7 +93,7 @@ def dbl_conv(activation_fn=sigmoid):
 def regularized_dbl_conv():
     for lmbda in [0.00001, 0.0001, 0.001, 0.01, 0.1, 1.0, 10.0, 100.0]:
         for j in range(3):
-            print "Conv + Conv + FC num %s, with regularization %s" % (j, lmbda)
+            print("Conv + Conv + FC num %s, with regularization %s" % (j, lmbda))
             net = Network([
                 ConvPoolLayer(image_shape=(mini_batch_size, 1, 28, 28),
                               filter_shape=(20, 1, 5, 5),
@@ -109,7 +109,7 @@ def regularized_dbl_conv():
 def dbl_conv_relu():
     for lmbda in [0.0, 0.00001, 0.0001, 0.001, 0.01, 0.1, 1.0, 10.0, 100.0]:
         for j in range(3):
-            print "Conv + Conv + FC num %s, relu, with regularization %s" % (j, lmbda)
+            print("Conv + Conv + FC num %s, relu, with regularization %s" % (j, lmbda))
             net = Network([
                 ConvPoolLayer(image_shape=(mini_batch_size, 1, 28, 28),
                               filter_shape=(20, 1, 5, 5),
@@ -135,7 +135,7 @@ def expanded_data(n=100):
     expanded_training_data, _, _ = network3.load_data_shared(
         "../data/mnist_expanded.pkl.gz")
     for j in range(3):
-        print "Training with expanded data, %s neurons in the FC layer, run num %s" % (n, j)
+        print("Training with expanded data, %s neurons in the FC layer, run num %s" % (n, j))
         net = Network([
             ConvPoolLayer(image_shape=(mini_batch_size, 1, 28, 28),
                           filter_shape=(20, 1, 5, 5),
@@ -160,7 +160,7 @@ def expanded_data_double_fc(n=100):
     expanded_training_data, _, _ = network3.load_data_shared(
         "../data/mnist_expanded.pkl.gz")
     for j in range(3):
-        print "Training with expanded data, %s neurons in two FC layers, run num %s" % (n, j)
+        print("Training with expanded data, %s neurons in two FC layers, run num %s" % (n, j))
         net = Network([
             ConvPoolLayer(image_shape=(mini_batch_size, 1, 28, 28),
                           filter_shape=(20, 1, 5, 5),
@@ -183,7 +183,7 @@ def double_fc_dropout(p0, p1, p2, repetitions):
     nets = []
     for j in range(repetitions):
         print("\n\nTraining using a dropout network with parameters ",p0,p1,p2)
-        print "Training with expanded data, run num %s" % j
+        print("Training with expanded data, run num %s" % j)
         net = Network([
             ConvPoolLayer(image_shape=(mini_batch_size, 1, 28, 28),
                           filter_shape=(20, 1, 5, 5),
