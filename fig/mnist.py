@@ -2,7 +2,8 @@
 mnist
 ~~~~~
 
-Draws images based on the MNIST data."""
+Draws images based on the MNIST data.
+"""
 
 #### Libraries
 # Standard library

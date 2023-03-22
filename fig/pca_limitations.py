@@ -10,6 +10,7 @@ from mpl_toolkits.mplot3d import Axes3D
 import matplotlib.pyplot as plt
 import numpy as np
 
+
 # Plot just the data
 fig = plt.figure()
 ax = fig.gca(projection='3d')
@@ -19,6 +20,7 @@ x = np.sin(theta)+0.03*np.random.randn(20)
 y = np.cos(theta)+0.03*np.random.randn(20)
 ax.plot(x, y, z, 'ro')
 plt.show()
+
 
 # Plot the data and the helix together
 fig = plt.figure()

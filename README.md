@@ -3,7 +3,7 @@
 This repository contains code samples for my book on ["Neural Networks
 and Deep Learning"](http://neuralnetworksanddeeplearning.com).
 
-The code is written for Python 2.6 or 2.7. Michal Daniel Dobrzanski
+The code was written for Python 2.6 or 2.7. Michal Daniel Dobrzanski
 has a repository for Python 3
 [here](https://github.com/MichalDanielDobrzanski/DeepLearningPython35). I
 will not be updating the current repository for Python 3
@@ -16,6 +16,10 @@ of the library.  I will not be making such modifications.
 As the code is written to accompany the book, I don't intend to add
 new features. However, bug reports are welcome, and you should feel
 free to fork and modify the code.
+
+## Updating to Python3.8 with GPU
+
+
 
 ## License
 

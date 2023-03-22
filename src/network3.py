@@ -44,24 +44,26 @@ from theano.tensor.nnet import softmax
 from theano.tensor import shared_randomstreams
 from theano.tensor.signal import downsample
 
+
 # Activation functions for neurons
 def linear(z): return z
 def ReLU(z): return T.maximum(0.0, z)
 from theano.tensor.nnet import sigmoid
 from theano.tensor import tanh
 
-
+# TODO update to 3.7
 #### Constants
 GPU = True
 if GPU:
-    print "Trying to run under a GPU.  If this is not desired, then modify "+\
-        "network3.py\nto set the GPU flag to False."
+    print("Trying to run under a GPU.  If this is not desired, then modify "+\
+        "network3.py\nto set the GPU flag to False.")
     try: theano.config.device = 'gpu'
     except: pass # it's already set
     theano.config.floatX = 'float32'
 else:
-    print "Running with a CPU.  If this is not desired, then the modify "+\
-        "network3.py to set\nthe GPU flag to True."
+    print("Running with a CPU.  If this is not desired, then the modify "+\
+        "network3.py to set\nthe GPU flag to True.")
+
 
 #### Load the MNIST data
 def load_data_shared(filename="../data/mnist.pkl.gz"):
@@ -79,6 +81,7 @@ def load_data_shared(filename="../data/mnist.pkl.gz"):
             np.asarray(data[1], dtype=theano.config.floatX), borrow=True)
         return shared_x, T.cast(shared_y, "int32")
     return [shared(training_data), shared(validation_data), shared(test_data)]
+
 
 #### Main class used to construct and train networks
 class Network(object):
@@ -185,6 +188,7 @@ class Network(object):
 
 #### Define layer types
 
+
 class ConvPoolLayer(object):
     """Used to create a combination of a convolutional and a max-pooling
     layer.  A more sophisticated implementation would separate the
@@ -236,6 +240,7 @@ class ConvPoolLayer(object):
             pooled_out + self.b.dimshuffle('x', 0, 'x', 'x'))
         self.output_dropout = self.output # no dropout in the convolutional layers
 
+
 class FullyConnectedLayer(object):
 
     def __init__(self, n_in, n_out, activation_fn=sigmoid, p_dropout=0.0):
@@ -269,6 +274,7 @@ class FullyConnectedLayer(object):
     def accuracy(self, y):
         "Return the accuracy for the mini-batch."
         return T.mean(T.eq(y, self.y_out))
+
 
 class SoftmaxLayer(object):
 
@@ -306,6 +312,7 @@ class SoftmaxLayer(object):
 def size(data):
     "Return the size of the dataset `data`."
     return data[0].get_value(borrow=True).shape[0]
+
 
 def dropout_layer(layer, p_dropout):
     srng = shared_randomstreams.RandomStreams(

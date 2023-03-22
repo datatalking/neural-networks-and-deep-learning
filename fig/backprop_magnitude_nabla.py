@@ -38,6 +38,7 @@ that code.  That's why I've simply put the results in by hand below.
 # Third-party libraries
 import matplotlib.pyplot as plt
 
+
 nw1 = [0.129173436407863, 0.4242933114455002, 
        1.6154682713449411, 7.5451567587160069]
 nw2 = [0.12571016850457151, 0.44231149185805047, 
